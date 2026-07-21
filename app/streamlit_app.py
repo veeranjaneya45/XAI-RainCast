@@ -15,9 +15,22 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import shap
 
-# Make `src` importable when launched as `streamlit run app/streamlit_app.py`
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Project Root
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, ".."))
 
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+import os
+import sys
+
+ROOT_DIR = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", "..")
+)
+
+if ROOT_DIR not in sys.path:
+    sys.path.insert(0, ROOT_DIR)
 from src.config import XGB_MODEL_PATH, ARTIFACTS_JSON, MC_WEIGHTS_PATH, METRICS_JSON, UNCERTAINTY_JSON, OUTPUTS_DIR
 from src.train_model import load_model
 from src.uncertainty import MCDropoutNet
