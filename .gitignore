@@ -12,7 +12,6 @@ env/
 .DS_Store
 
 outputs/
-models/*.npz
 models/*.pkl
 models/*.joblib
 
