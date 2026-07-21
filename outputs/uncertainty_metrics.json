@@ -1,0 +1,6 @@
+{
+  "mc_dropout_T": 50,
+  "mc_test_accuracy": 0.8488343471992686,
+  "mc_ece": 0.027295063905321486,
+  "mean_predictive_std": 0.05136215425526062
+}
